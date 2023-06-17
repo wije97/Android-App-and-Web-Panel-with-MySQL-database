@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewOrderItems"
+    android:background="@drawable/bg5">
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:id="@+id/drawer_layout"
+        tools:openDrawer="start">
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:headerLayout="@layout/header"
+            app:menu="@menu/cus_menu"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include
+                    android:id="@+id/toolbar"
+                    layout="@layout/toolbar"
+                    app:navigationIcon="@drawable/menu" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_order_id_v"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/poppinsbold"
+                        android:gravity="center"
+                        android:text="@string/order_id"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:textSize="25sp" />
+
+                    <ListView
+                        android:id="@+id/view_order_list"
+                        android:padding="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="500dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="15dp"
+                    android:gravity="bottom">
+
+                    <Button
+                        android:id="@+id/btn_delete"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:backgroundTint="@null"
+                        android:background="@drawable/btn_delete"
+                        android:layout_marginRight="5dp"
+                        android:text="@string/delete_order"
+                        android:layout_marginEnd="5dp" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

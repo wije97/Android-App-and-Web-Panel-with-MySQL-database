@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserProfile"
+    android:background="@drawable/bg5">
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:id="@+id/drawer_layout"
+        tools:openDrawer="start">
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:headerLayout="@layout/header"
+            app:menu="@menu/cus_menu"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include
+                    android:id="@+id/toolbar"
+                    layout="@layout/toolbar"
+                    app:navigationIcon="@drawable/menu" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/poppinsbold"
+                        android:gravity="center"
+                        android:text="@string/your_profile"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:textSize="25sp" />
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp">
+
+                        <TableRow>
+                            <TextView
+                                android:text="@string/name"
+                                android:textColor="#000"
+                                android:layout_width="100dp"
+                                android:textSize="20sp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_height="wrap_content"/>
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_fullname_p"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginRight="30dp"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/poppinsbold"
+                                android:hint="@string/fullname"
+                                android:textColor="@android:color/holo_blue_dark"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.166" />
+
+                        </TableRow>
+
+                        <TableRow>
+                            <TextView
+                                android:text="@string/nic"
+                                android:textColor="#000"
+                                android:layout_width="100dp"
+                                android:textSize="20sp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_height="wrap_content"/>
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_nic_p"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginRight="30dp"
+                                android:fontFamily="@font/poppinsbold"
+                                android:hint="@string/nic"
+                                android:maxLength="10"
+                                android:layout_marginTop="10dp"
+                                android:textColor="@android:color/holo_blue_dark"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="parent"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.26" />
+                        </TableRow>
+
+                        <TableRow>
+                            <TextView
+                                android:text="@string/age"
+                                android:textColor="#000"
+                                android:textSize="20sp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"/>
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_age_p"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginRight="30dp"
+                                android:fontFamily="@font/poppinsbold"
+                                android:hint="@string/age"
+                                android:layout_marginTop="10dp"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:textColor="@android:color/holo_blue_dark"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.359"
+                                tools:ignore="HardcodedText" />
+
+                        </TableRow>
+
+                        <TableRow>
+                            <TextView
+                                android:text="@string/address"
+                                android:textColor="#000"
+                                android:textSize="20sp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"/>
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_address_p"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginRight="30dp"
+                                android:fontFamily="@font/poppinsbold"
+                                android:hint="@string/address"
+                                android:layout_marginTop="10dp"
+                                android:textColor="@android:color/holo_blue_dark"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.459" />
+
+                        </TableRow>
+
+                        <TableRow>
+                            <TextView
+                                android:text="@string/phone_no"
+                                android:textColor="#000"
+                                android:textSize="20sp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"/>
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_phone_no_p"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginRight="30dp"
+                                android:fontFamily="@font/poppinsbold"
+                                android:layout_weight="1"
+                                android:hint="@string/phone_no"
+                                android:maxLength="10"
+                                android:inputType="number"
+                                android:layout_marginTop="10dp"
+                                android:textColor="@android:color/holo_blue_dark"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.556" />
+                        </TableRow>
+
+                        <TableRow>
+                            <TextView
+                                android:text="@string/email"
+                                android:textColor="#000"
+                                android:textSize="20sp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"/>
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_email_p"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginRight="30dp"
+                                android:fontFamily="@font/poppinsbold"
+                                android:layout_weight="1"
+                                android:hint="@string/email"
+                                android:layout_marginTop="10dp"
+                                android:textColor="@android:color/holo_blue_dark"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.656" />
+                        </TableRow>
+
+                    </TableLayout>
+
+                    <ProgressBar
+                        android:id="@+id/pb_progress_p"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="15dp"
+                    android:gravity="bottom">
+
+                    <Button
+                        android:id="@+id/btn_edt_p"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:backgroundTint="@null"
+                        android:background="@drawable/button_background"
+                        android:layout_marginRight="5dp"
+                        android:text="@string/edit"
+                        android:layout_marginEnd="5dp" />
+
+                    <Button
+                        android:id="@+id/btn_update_p"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:backgroundTint="@null"
+                        android:background="@drawable/btn_bg"
+                        android:layout_marginRight="5dp"
+                        android:text="@string/update"
+                        android:layout_marginEnd="5dp"
+                        android:visibility="gone"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Cart"
+    android:background="@drawable/bg6">
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:id="@+id/drawer_layout"
+        tools:openDrawer="start">
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:headerLayout="@layout/header"
+            app:menu="@menu/cus_menu"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include
+                    android:id="@+id/toolbar"
+                    layout="@layout/toolbar"
+                    app:navigationIcon="@drawable/menu" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/dahsboard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/poppinsbold"
+                        android:gravity="center"
+                        android:text="@string/cart"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:textSize="25sp" />
+
+                    <ListView
+                        android:id="@+id/cart_list"
+                        android:padding="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="440dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="15dp"
+                    android:gravity="bottom">
+
+                    <TableLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:padding="10dp"
+                        android:background="@drawable/table_bg">
+
+                        <TableRow>
+                            <TextView
+                                android:id="@+id/tv_f_name_c"
+                                android:hint="@string/total_rs"
+                                android:textColor="#000"
+                                android:textStyle="bold"
+                                android:textSize="25sp"
+                                android:layout_width="200dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:id="@+id/tv_total"
+                                android:hint="@string/_00_00"
+                                android:textColor="#000"
+                                android:textStyle="bold"
+                                android:textSize="30sp"
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content"/>
+                        </TableRow>
+
+                        <TableRow>
+                            <TextView
+                                android:text="@string/cash_on_delivery"
+                                android:textColor="#000"
+                                android:textStyle="bold"
+                                android:layout_width="200dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp" />
+
+                        </TableRow>
+                    </TableLayout>
+
+                    <Button
+                        android:id="@+id/btn_order"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:backgroundTint="@null"
+                        android:background="@drawable/btn_bg"
+                        android:layout_marginRight="5dp"
+                        android:text="@string/order_now"
+                        android:layout_marginEnd="5dp" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

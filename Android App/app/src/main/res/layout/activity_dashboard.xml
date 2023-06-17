@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Dashboard"
+    android:background="@drawable/bg5">
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:id="@+id/drawer_layout"
+        tools:openDrawer="start">
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:headerLayout="@layout/header"
+            app:menu="@menu/cus_menu"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include
+                    android:id="@+id/toolbar"
+                    layout="@layout/toolbar"
+                    app:navigationIcon="@drawable/menu" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/dahsboard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/poppinsbold"
+                    android:gravity="center"
+                    android:text="@string/choose_your_foods"
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:textSize="25sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <HorizontalScrollView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="10dp">
+
+                            <Button
+                                android:id="@+id/btn_brFast"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0"
+                                android:textAllCaps="false"
+                                app:backgroundTint="@null"
+                                android:textSize="12sp"
+                                android:background="@drawable/btn_bg"
+                                android:layout_marginRight="5dp"
+                                android:text="@string/breakfast"
+                                android:layout_marginEnd="5dp" />
+
+                            <Button
+                                android:id="@+id/btn_lunch"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0"
+                                android:textSize="12sp"
+                                android:textAllCaps="false"
+                                android:background="@drawable/btn_bg"
+                                app:backgroundTint="@null"
+                                android:layout_marginRight="5dp"
+                                android:text="@string/lunch"
+                                android:layout_marginEnd="5dp" />
+
+                            <Button
+                                android:id="@+id/btn_dinner"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0"
+                                android:textSize="12sp"
+                                android:textAllCaps="false"
+                                android:background="@drawable/btn_bg"
+                                app:backgroundTint="@null"
+                                android:layout_marginRight="5dp"
+                                android:text="@string/dinner"
+                                android:layout_marginEnd="5dp" />
+
+                            <Button
+                                android:id="@+id/btn_desert"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0"
+                                android:textSize="12sp"
+                                android:textAllCaps="false"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/btn_bg"
+                                app:backgroundTint="@null"
+                                android:text="@string/desert"
+                                android:layout_marginEnd="5dp" />
+
+                            <Button
+                                android:id="@+id/btn_all"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0"
+                                android:textSize="12sp"
+                                android:textAllCaps="false"
+                                android:background="@drawable/btn_bg"
+                                app:backgroundTint="@null"
+                                android:text="@string/all"/>
+
+                        </LinearLayout>
+
+                    </HorizontalScrollView>
+
+
+                </LinearLayout>
+
+                <ListView
+                    android:id="@+id/food_list"
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

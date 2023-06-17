@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/dashboard">
+        <menu>
+            <group android:checkableBehavior="single">
+
+                <item
+                    android:id="@+id/nav_home"
+                    android:icon="@drawable/ic_address"
+                    android:title="@string/home" />
+
+                <item
+                    android:id="@+id/nav_cart"
+                    android:icon="@drawable/ic_cart"
+                    android:title="@string/cart" />
+
+                <item
+                    android:id="@+id/nav_orders"
+                    android:icon="@drawable/ic_orders"
+                    android:title="@string/orders" />
+
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="@string/profile">
+
+        <menu>
+
+            <group android:checkableBehavior="single">
+
+                <item
+                    android:id="@+id/nav_account"
+                    android:icon="@drawable/ic_baseline_person_24"
+                    android:title="@string/account" />
+
+                <item
+                    android:id="@+id/nav_logout"
+                    android:icon="@drawable/ic_login"
+                    android:title="@string/logout" />
+
+            </group>
+        </menu>
+
+    </item>
+
+</menu>
